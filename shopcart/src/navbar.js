@@ -4,6 +4,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DisplayProducts from "./displayProducts";
 import Cart from "./cart";
+import SignIn from "./signin";
 
 function Navbar(props) {
   return (
@@ -30,7 +31,10 @@ function Navbar(props) {
           />
         </Route>
         <Route path="/cart">
-          <Cart products={props.products} />
+          <Cart products={props.products} totalValue={props.totalQuantity} />
+        </Route>
+        <Route path="/signin">
+          <SignIn />
         </Route>
       </Switch>
     </Router>
